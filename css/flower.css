@@ -1,0 +1,131 @@
+/* Reset & Font */
+* { margin:0; padding:0; box-sizing:border-box; }
+body {
+  font-family: 'Cormorant Garamond', serif;
+  background: #cce7ff;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 100vh;
+  padding-top: 20px;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* Bouquet */
+.bouquet {
+  width: 220px;
+  display:block;
+  margin: 0 auto;
+}
+.stem { stroke: #007acc; stroke-width: 6; fill: none; }
+.flower circle { fill: #ffdd99; }
+.flower .core { fill: #ff9966; }
+.ribbon { fill: #ff99cc; stroke:#e066ff; stroke-width:1; opacity:0.8; }
+
+.caption {
+  text-align: center;
+  color: #005bb5;
+  margin-top: 10px;
+  font-size:16px;
+}
+
+/* Elegant Bloom Button - Centered */
+.bloom-btn {
+  display: block;           /* memastikan tombol tetap block untuk margin auto */
+  margin: 20px auto;        /* otomatis di tengah horizontal */
+  padding: 8px 20px;        /* lebih kecil dan elegan */
+  border: none;
+  border-radius: 12px;
+  background: #6c63ff;      /* lembut dan elegan */
+  color: #fff;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+}
+
+.bloom-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(108, 99, 255, 0.4);
+  background: #5848c2;      /* sedikit lebih gelap saat hover */
+}
+
+/* Cards wrapper */
+.cards-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;       /* center semua card */
+  justify-content: center;
+  margin: 20px auto 40px auto;
+  width: 100%;
+  max-width: 600px;
+  gap: 12px;
+  text-align: center;
+}
+
+/* Memory card */
+.memory-card {
+  background: #ffffffcc;
+  padding: 15px 20px;
+  border-radius: 18px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+  font-size: 14px;
+  color: #333;
+  width: 90%;
+  max-width: 400px;
+  margin: 0 auto;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.5s ease;
+}
+
+.memory-card.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Back ornament (circular with bloom + stem) */
+.back {
+  position: fixed;
+  bottom: 25px;
+  left: 25px;
+  width: 50px;
+  height: 50px;
+  border: none;
+  background: #007acc;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  z-index: 3;
+}
+
+.back:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 15px rgba(0,123,204,0.6);
+}
+
+.back .stem {
+  position: absolute;
+  width: 4px;
+  height: 20px;
+  background: #fff;
+  bottom: 12px;
+  border-radius: 2px;
+}
+
+.back .bloom {
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  background: #fff;
+  border-radius: 50%;
+  top: 8px;
+}
+
+/* Exit animation */
+.exit { animation: fadeExit 0.7s forwards; }
+@keyframes fadeExit { to { opacity:0; transform: scale(0.95); } }

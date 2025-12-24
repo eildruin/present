@@ -1,0 +1,145 @@
+/* Reset & Font */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  font-family: 'Cormorant Garamond', serif;
+  background: #cce7ff;
+  min-height: 100vh;       /* gunakan min-height supaya bisa scroll */
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+  position: relative;
+  overflow-y: auto;        /* scroll vertikal */
+}
+
+/* Floating particles / subtle */
+body::before, body::after {
+  content: "";
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.15);
+  top: 10%;
+  left: 15%;
+  animation: float 10s ease-in-out infinite alternate;
+}
+
+body::after {
+  width: 150px;
+  height: 150px;
+  top: 70%;
+  left: 75%;
+  animation-delay: 3s;
+}
+
+@keyframes float {
+  0% { transform: translateY(0) translateX(0); }
+  50% { transform: translateY(-25px) translateX(10px); }
+  100% { transform: translateY(0) translateX(0); }
+}
+
+/* Letter Card */
+.letter-wrap {
+  z-index: 2;
+  width: 100%;
+  max-width: 700px;
+}
+
+.letter {
+  background: #ffffffcc;
+  padding: 40px 35px;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+  width: 100%;
+  position: relative;
+  margin: 20px auto;  /* beri jarak dari atas/bawah */
+}
+
+/* Header */
+.letter header h1 {
+  font-size: 32px;
+  color: #005bb5;
+  text-align: center;
+  margin-bottom: 8px;
+}
+
+.letter header .rule {
+  display: block;
+  width: 60px;
+  height: 2px;
+  background: #007acc;
+  margin: 0 auto 25px auto;
+  border-radius: 1px;
+}
+
+/* Letter content */
+.letter .content p {
+  font-size: 18px;
+  color: #333;
+  margin-bottom: 20px;
+  line-height: 1.6;
+  word-wrap: break-word;
+}
+
+/* Footer */
+.letter footer .signature {
+  text-align: right;
+  font-size: 16px;
+  color: #007acc;
+  margin-top: 25px;
+}
+
+/* Back button */
+.back-ornament {
+  position: fixed;
+  bottom: 25px;
+  left: 25px;
+  width: 50px;
+  height: 50px;
+  border: none;
+  background: #007acc;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  z-index: 3;
+}
+
+.back-ornament:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 15px rgba(0,123,204,0.6);
+}
+
+.back-ornament .stem {
+  position: absolute;
+  width: 4px;
+  height: 20px;
+  background: #fff;
+  bottom: 12px;
+  border-radius: 2px;
+}
+
+.back-ornament .bloom {
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  background: #fff;
+  border-radius: 50%;
+  top: 8px;
+}
+
+/* Exit animation */
+.exit {
+  animation: fadeExit 0.8s forwards;
+}
+
+@keyframes fadeExit {
+  to { opacity: 0; transform: scale(0.95); }
+}

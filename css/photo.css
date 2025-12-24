@@ -1,0 +1,138 @@
+/* Reset & Font */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Cormorant Garamond', serif;
+  background: linear-gradient(135deg, #cce7ff, #e0f7ff);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* Floating soft particles */
+body::before, body::after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.15);
+  width: 150px;
+  height: 150px;
+  animation: float 10s ease-in-out infinite alternate;
+}
+
+body::after {
+  width: 100px;
+  height: 100px;
+  top: 70%;
+  left: 75%;
+  animation-delay: 3s;
+}
+
+@keyframes float {
+  0% { transform: translateY(0) translateX(0); }
+  50% { transform: translateY(-20px) translateX(10px); }
+  100% { transform: translateY(0) translateX(0); }
+}
+
+/* Photo wrapper */
+.photo-wrap {
+  z-index: 2;
+  text-align: center;
+  width: 90%;
+  max-width: 600px; /* maksimal lebar frame */
+  display: flex;
+  flex-direction: column;
+  gap: 20px; /* jarak antar foto */
+}
+
+/* Photo frame */
+.photo-frame {
+  background: #ffffffcc;
+  padding: 20px;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+  display: inline-block;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.photo-frame:hover {
+  transform: scale(1.03);
+  box-shadow: 0 15px 35px rgba(0,0,0,0.25);
+}
+
+/* Photo image */
+.photo-frame img {
+  max-width: 100%;        /* mengikuti lebar frame */
+  max-height: 400px;      /* batasi tinggi */
+  width: auto;
+  height: auto;
+  object-fit: cover;      /* proporsional */
+  border-radius: 15px;
+  display: block;
+  margin: 0 auto 12px auto;
+}
+
+/* Caption */
+.photo-frame figcaption {
+  font-size: 16px;
+  color: #005bb5;
+  font-style: italic;
+}
+
+/* Back ornament button */
+.back-ornament {
+  position: fixed;
+  bottom: 25px;
+  left: 25px;
+  width: 50px;
+  height: 50px;
+  border: none;
+  background: #007acc;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  z-index: 3;
+}
+
+.back-ornament:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 15px rgba(0,123,204,0.6);
+}
+
+.back-ornament .stem {
+  position: absolute;
+  width: 4px;
+  height: 20px;
+  background: #fff;
+  bottom: 12px;
+  border-radius: 2px;
+}
+
+.back-ornament .bloom {
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  background: #fff;
+  border-radius: 50%;
+  top: 8px;
+}
+
+/* Exit animation */
+.exit {
+  animation: fadeExit 0.7s forwards;
+}
+
+@keyframes fadeExit {
+  to { opacity: 0; transform: scale(0.95); }
+}

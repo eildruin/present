@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Happy 3rd Month-versarry</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Baloo+2:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/choose.css" />
+</head>
+<body>
+
+<!-- ambient floating soft bubbles -->
+<div class="ambient">
+  <span></span>
+  <span></span>
+  <span></span>
+  <span></span>
+</div>
+
+<div class="choose-wrapper">
+  <h1>A Touch of Magic Inside</h1>
+  <p>Every Gift Holds a Secret</p>
+
+  <div class="menu-grid">
+
+    <div class="menu-card" onclick="go('letter.html')">
+      <div class="icon">🌙</div>
+      <h2>Moonlight</h2>
+      <p>Whispers of joy tucked away.</p>
+    </div>
+
+    <div class="menu-card" onclick="go('photo.html')">
+      <div class="icon">✨</div>
+      <h2>Starlight</h2>
+      <p>Moments waiting to be discovered.</p>
+    </div>
+
+    <div class="menu-card" onclick="go('flower.html')">
+      <div class="icon">🌿</div>
+      <h2>Meadow</h2>
+      <p>A touch of beauty blooms within.</p>
+    </div>
+
+  </div>
+
+  <div class="back-wrapper">
+    <button class="back-btn" onclick="goBack()">Back</button>
+  </div>
+</div>
+
+<script>
+  function go(link) {
+    document.body.classList.add("fade");
+    setTimeout(() => {
+      window.location.href = link;
+    }, 500);
+  }
+
+  function goBack() {
+    window.location.href = "index.html";
+  }
+</script>
+
+</body>
+</html>

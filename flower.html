@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Happy 3rd Month-versarry</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/flower.css">
+</head>
+<body>
+
+<main class="stage">
+
+  <!-- Bouquet -->
+  <svg class="bouquet" viewBox="0 0 360 600" aria-hidden="true">
+    <path d="M180 560 V260" class="stem center"/>
+    <path d="M180 560 C150 460 120 360 120 260" class="stem left"/>
+    <path d="M180 560 C210 460 240 360 240 260" class="stem right"/>
+    <g class="flower left">
+      <circle cx="120" cy="240" r="34"/>
+      <circle cx="120" cy="240" r="16" class="core"/>
+    </g>
+    <g class="flower center">
+      <circle cx="180" cy="220" r="40"/>
+      <circle cx="180" cy="220" r="18" class="core"/>
+    </g>
+    <g class="flower right">
+      <circle cx="240" cy="240" r="34"/>
+      <circle cx="240" cy="240" r="16" class="core"/>
+    </g>
+    <rect x="135" y="520" rx="12" ry="12" width="90" height="26" class="ribbon"/>
+  </svg>
+
+  <p class="caption">Wrapped in a bit of magic, abang!</p>
+
+  <!-- Bloom button -->
+  <button class="bloom-btn" id="bloomBtn">Reveal the Magic</button>
+
+  <!-- Memory cards (hidden initially) -->
+  <div class="cards-wrapper" id="cardsWrapper">
+    <div class="memory-card">My dear Harun Luthair absolutely loves Laksa.</div>
+    <div class="memory-card">Harun is crazy about modifying his beloved motorbike, Shiro.</div>
+    <div class="memory-card">In Harun's life, I come right after Shiro and Persib (lovingly).</div>
+    <div class="memory-card">Harun dreams of joining a Nusantara restaurant! I hope one day he becomes a chef with his own place!</div>
+    <div class="memory-card">Harun really dislikes vegetables. Getting him to eat them is always a challenge!</div>
+    <div class="memory-card">Harun adores his mom more than anything else.</div>
+    <div class="memory-card">Harun is super talented in cooking and drawing.</div>
+    <div class="memory-card">Harun has a cozy habit of taking warm showers.</div>
+    <div class="memory-card">Harun loves Dewa 19 songs and has a big passion for law.</div>
+    <div class="memory-card">Harun truly loves me, heart and soul.</div>
+</div>
+
+  <!-- Back button ornament -->
+  <button class="back" onclick="goBack()">
+    <span class="stem"></span>
+    <span class="bloom"></span>
+  </button>
+
+</main>
+
+<script>
+const bloomBtn = document.getElementById("bloomBtn");
+const cardsWrapper = document.getElementById("cardsWrapper");
+const cards = cardsWrapper.querySelectorAll(".memory-card");
+let index = 0;
+
+bloomBtn.addEventListener("click", () => {
+  if(index < cards.length){
+    cards[index].classList.add("show");
+    index++;
+    if(index === cards.length) {
+      bloomBtn.style.display = "none"; // hide button when all cards shown
+    }
+  }
+});
+
+function goBack() {
+  document.body.classList.add("exit");
+  setTimeout(() => location.href = "choose.html", 700);
+}
+</script>
+
+</body>
+</html>

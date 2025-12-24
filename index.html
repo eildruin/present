@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Happy 3rd Month-versarry</title>
+  <link rel="stylesheet" href="css/lock.css">
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<div class="lock-container">
+
+  <!-- Background bunga lucu -->
+  <div class="decorative">
+    <img src="assets/flower (1).png" alt="flower" class="flower flower1">
+    <img src="assets/flower (2).png" alt="flower" class="flower flower2">
+  </div>
+
+  <div class="card">
+    <h1>Open Me!</h1>
+    <p class="subtitle">Unwrap me to discover a hidden delight.</p>
+
+    <div class="display" id="display">* * * * * *</div>
+
+    <div class="keypad">
+      <button onclick="press(1)">1</button>
+      <button onclick="press(2)">2</button>
+      <button onclick="press(3)">3</button>
+      <button onclick="press(4)">4</button>
+      <button onclick="press(5)">5</button>
+      <button onclick="press(6)">6</button>
+      <button onclick="press(7)">7</button>
+      <button onclick="press(8)">8</button>
+      <button onclick="press(9)">9</button>
+      <button class="clear" onclick="clearCode()">Hapus</button>
+      <button onclick="press(0)">0</button>
+      <button class="enter" onclick="unlock()">Enter</button>
+    </div>
+  </div>
+
+</div>
+
+<script>
+  const SECRET = "250925";
+  let input = "";
+
+  function press(num) {
+    if (input.length < 6) {
+      input += num;
+      update();
+    }
+  }
+
+  function clearCode() {
+    input = "";
+    update();
+  }
+
+  function update() {
+    document.getElementById("display").textContent =
+      input.split("").join(" ") + " •".repeat(6 - input.length);
+  }
+
+  function unlock() {
+    if (input === SECRET) {
+      document.body.classList.add("fade-out");
+      setTimeout(() => {
+        window.location.href = "choose.html";
+      }, 1200);
+    } else {
+      document.getElementById("display").textContent = "× × × × × ×";
+      setTimeout(clearCode, 900);
+    }
+  }
+</script>
+
+</body>
+</html>

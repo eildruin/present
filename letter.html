@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Happy 3rd Month-versarry</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/letter.css" />
+</head>
+<body>
+
+<main class="letter-wrap">
+
+  <article class="letter">
+    <header>
+      <h1>Dear, Harun Luthair</h1>
+      <span class="rule"></span>
+    </header>
+
+    <section class="content" id="letterContent">
+      <p data-text="Halo, sayang!"></p>
+      <p data-text="Selamat tanggal 25 yang ke-3."></p>
+      <p data-text="Kamu pernah nyangka kita bakal sejauh ini nggak? Dari pertama kali aku kenal kamu di bulan September sampai hari ini, di mana kamu cuma punyaku, bukan orang lain. Aku bersyukur banget bisa ketemu abang di awal bulan September itu. Bahkan waktu aku tahu abang suka sama aku, rasanya masih jelas banget sampai sekarang. Aku seneng banget, ternyata orang yang aku suka juga suka balik ke aku. Terima kasih ya, abang, sudah datang ke hidup aku."></p>
+      <p data-text="Abang, kamu tahu nggak? Kamu itu my type of man banget. Kamu adalah orang yang selama ini selalu aku cari-cari. Coba abang bayangin, seberuntung apa aku akhirnya nemuin orang yang bisa klop sama aku, bahkan bisa nenangin badai di dalam diri aku. Kamu itu definisi sempurna yang selama ini ada di bayanganku tentang pasangan, dan aku bersyukur banget soal itu."></p>
+      <p data-text="Sayaaaaang, aku mau minta maaf sama kamu karena aku belum jadi pasangan yang sempurna. Makin ke sini aku ngerasa makin kekanakan dan lebih emosional ke kamu, dan aku pasti sering ngeluarin kata-kata yang bikin kamu sakit hati. Aku minta maaf ya, abang, karena kamu harus sering ngalah ke aku, padahal aku tahu kamu juga punya emosi. Kamu sudah mengusahakan banyak hal buat aku, berubah buat aku, tapi aku masih sering ngungkit hal-hal yang seharusnya nggak perlu aku ungkit. Aku jahat ya, abang? Aku sering banget nyalahin kamu. Bahkan sekarang aku sering nggak sabaran karena kangen sama kamu."></p>
+      <p data-text="Akhir-akhir ini aku sendiri juga bingung, kenapa aku bisa sekangen dan se-clingy ini ke kamu. Padahal aku tahu, kalau aku terlalu clingy, nanti aku sendiri yang nyesel sama apa yang aku ucapkan. Aku takut kamu jadi nggak mau cerita lagi ke aku. Padahal aku paham kok, abang. Kita berdua nggak bisa selalu ada setiap waktu. Aku nggak nuntut waktu kamu, aku juga nggak minta kamu selalu stay sama aku."></p>
+      <p data-text="Aku nggak tahu, abang, seberapa banyak luka yang sudah aku kasih ke kamu. Untuk itu, aku minta maaf, ya?"></p>
+      <p data-text="Selamat tiga bulan, abang. Aku mungkin nggak bisa ngungkapin semuanya dengan sempurna, tapi aku yakin kamu tahu kalau aku sayaaaaang banget sama kamu. Terima kasih sudah jadi tempat pulang terbaik dan terindah buat aku. Terima kasih sudah sayang sama aku."></p>
+      <p data-text="Kalau suatu saat abang nemuin hal-hal yang bikin abang pengin nyerah, tolong pulang ke aku ya, sayang. Aku di sini. Aku akan jadi orang yang nemenin abang, walaupun satu dunia berbalik ninggalin abang."></p>
+      <p data-text="I don’t promise to be flawless. I don’t promise that I will never get emotional, insecure, or overwhelmed. But I promise to keep choosing you, even when things feel heavy, even when the world feels loud, even when loving becomes work. I promise to grow, to learn, and to become better with you."></p>
+      <p data-text="No matter how far life takes us, no matter how busy or complicated things become, my heart will always know where it belongs. It belongs with you."></p>
+      <p data-text="So if you ever feel tired, lost, or unsure, come back to me. Let me hold your worries, even the ones you don’t know how to say out loud. I may not have all the answers, but I have a heart that will always stay, always care, and always love you."></p>
+      <p data-text="Happy three months, sayang."></p>
+      <p data-text="And many more moments, memories, and tomorrows, together."></p>
+    </section>
+
+    <footer>
+      <p class="signature">Eldruin Myrel</p>
+    </footer>
+  </article>
+
+</main>
+
+<!-- BACK BUTTON (FIXED) -->
+<button class="back-ornament" onclick="goBack()" aria-label="Back">
+  <span class="stem"></span>
+  <span class="bloom"></span>
+</button>
+
+<script>
+  /* TYPEWRITER */
+  const paragraphs = document.querySelectorAll("#letterContent p");
+  let pIndex = 0;
+  let charIndex = 0;
+
+  function typeParagraph() {
+    if (pIndex >= paragraphs.length) return;
+
+    const p = paragraphs[pIndex];
+    const text = p.dataset.text;
+
+    if (charIndex < text.length) {
+      p.textContent += text.charAt(charIndex);
+      charIndex++;
+      setTimeout(typeParagraph, 28);
+    } else {
+      pIndex++;
+      charIndex = 0;
+      setTimeout(typeParagraph, 500);
+    }
+  }
+
+  window.addEventListener("load", () => {
+    setTimeout(typeParagraph, 500);
+  });
+
+  function goBack() {
+    document.body.classList.add("exit");
+    setTimeout(() => {
+      window.location.href = "choose.html";
+    }, 800);
+  }
+</script>
+
+</body>
+</html>

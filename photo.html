@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Happy 3rd Month-versarry</title>
+
+  <!-- Elegant serif font -->
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/photo.css" />
+</head>
+<body>
+
+<main class="photo-wrap">
+
+  <!-- Foto pertama -->
+  <figure class="photo-frame">
+    <img src="assets/us.png" alt="A cherished memory" />
+    <figcaption>A moment I keep quietly. Aku pengen banget suatu saat bisa jalan-jalan sama abang, berdua aja di tempat yang nggak siapapun tau.</figcaption>
+  </figure>
+
+  <!-- Foto kedua -->
+  <figure class="photo-frame">
+    <img src="assets/us2.jpg" alt="Another memory" />
+    <figcaption>Our first date at the beach. Suatu saat, ayo main ke pantai bareng aku! Biar kita bisa nikmatin waktu berduaan dan lihat senja bareng-bareng. Aku mau bandingin, mana yang paling cantik, kamu atau senjanya.</figcaption>
+  </figure>
+
+  <!-- Foto ketiga -->
+  <figure class="photo-frame">
+    <img src="assets/us3.jpg" alt="Special memory" />
+    <figcaption>The rainy day we laughed together. Pasti romantis kan kalau aku sama kamu bisa berduaan di bawah hujan di kota kesayangan kamu, Bandung. Aku mau hujan-hujanan sama kamu, tapi jangan naik Shiro!</figcaption>
+  </figure>
+
+  <!-- Back ornament button -->
+  <button class="back-ornament" onclick="goBack()" aria-label="Back">
+    <span class="stem"></span>
+    <span class="bloom"></span>
+  </button>
+
+</main>
+
+<script>
+  function goBack() {
+    document.body.classList.add("exit");
+    setTimeout(() => {
+      window.location.href = "choose.html";
+    }, 700);
+  }
+</script>
+
+</body>
+</html>
